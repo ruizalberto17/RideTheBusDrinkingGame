@@ -11,6 +11,10 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var cardView: UIImageView!
+    let suits = ["D","H","C","S"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,4 +60,40 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    @IBAction func blackButtonPresed(_ sender: Any) {
+        let value = Int.random(in: 2...14)
+        let suitValue = suits[Int.random(in: 0...3)]
+        let cardImage = String(value) + suitValue
+        cardView.image = UIImage(named: cardImage)
+        if (suitValue.elementsEqual("D") || suitValue.elementsEqual("H")) {
+            print("Take a drink!")
+        } else {
+            print("Give a drink!")
+        }
+        let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
+        vc.previousCard = cardImage
+        vc.previousCardValue = value
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    @IBAction func redButtonPressed(_ sender: Any) {
+        let value = Int.random(in: 2...14)
+        let suitValue = suits[Int.random(in: 0...3)]
+        let cardImage = String(value) + suitValue
+        cardView.image = UIImage(named: cardImage)
+        if (suitValue.elementsEqual("C") || suitValue.elementsEqual("S")) {
+            print("Take a drink!")
+        } else {
+            print("Give a drink!")
+        }
+        let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
+        vc.previousCard = cardImage
+        vc.previousCardValue = value
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    
 }

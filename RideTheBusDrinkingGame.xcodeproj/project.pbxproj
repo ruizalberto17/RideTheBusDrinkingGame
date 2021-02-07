@@ -16,6 +16,10 @@
 		69BA6F7B25CDF98D00228B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7A25CDF98D00228B01 /* Assets.xcassets */; };
 		69BA6F8625CDF98E00228B01 /* RideTheBusDrinkingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F8525CDF98E00228B01 /* RideTheBusDrinkingGameTests.swift */; };
 		69BA6F9125CDF98E00228B01 /* RideTheBusDrinkingGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F9025CDF98E00228B01 /* RideTheBusDrinkingGameUITests.swift */; };
+		69BA6FB625CE34AA00228B01 /* GreaterOrLessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */; };
+		69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */; };
+		69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */; };
+		69BA6FDA25CEA84300228B01 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		69BA6F8C25CDF98E00228B01 /* RideTheBusDrinkingGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideTheBusDrinkingGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F9025CDF98E00228B01 /* RideTheBusDrinkingGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTheBusDrinkingGameUITests.swift; sourceTree = "<group>"; };
 		69BA6F9225CDF98E00228B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterOrLessViewController.swift; sourceTree = "<group>"; };
+		69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideOrOutsideViewController.swift; sourceTree = "<group>"; };
+		69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSuitViewController.swift; sourceTree = "<group>"; };
+		69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +114,13 @@
 				69BA6F7125CDF98600228B01 /* Actions.sks */,
 				69BA6F7325CDF98600228B01 /* GameScene.swift */,
 				69BA6F7525CDF98600228B01 /* GameViewController.swift */,
+				69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */,
+				69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */,
+				69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */,
 				69BA6F7725CDF98600228B01 /* Main.storyboard */,
 				69BA6F7A25CDF98D00228B01 /* Assets.xcassets */,
 				69BA6F7C25CDF98D00228B01 /* Info.plist */,
+				69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */,
 			);
 			path = RideTheBusDrinkingGame;
 			sourceTree = "<group>";
@@ -237,6 +249,7 @@
 				69BA6F7925CDF98600228B01 /* Main.storyboard in Resources */,
 				69BA6F7025CDF98600228B01 /* GameScene.sks in Resources */,
 				69BA6F7B25CDF98D00228B01 /* Assets.xcassets in Resources */,
+				69BA6FDA25CEA84300228B01 /* Launch Screen.storyboard in Resources */,
 				69BA6F7225CDF98600228B01 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BA6F7425CDF98600228B01 /* GameScene.swift in Sources */,
+				69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */,
 				69BA6F7625CDF98600228B01 /* GameViewController.swift in Sources */,
 				69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */,
+				69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */,
+				69BA6FB625CE34AA00228B01 /* GreaterOrLessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,6 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
