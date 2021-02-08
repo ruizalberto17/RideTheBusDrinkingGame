@@ -12,16 +12,14 @@ import GameplayKit
 class GameViewController: UIViewController {
 
     @IBOutlet weak var cardView: UIImageView!
-    let suits = ["D","H","C","S"]
     
+    var playingDeck: PlayingCardDeck = PlayingCardDeck()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
-            
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
                 
@@ -62,35 +60,35 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func blackButtonPresed(_ sender: Any) {
-        let value = Int.random(in: 2...14)
-        let suitValue = suits[Int.random(in: 0...3)]
-        let cardImage = String(value) + suitValue
-        cardView.image = UIImage(named: cardImage)
-        if (suitValue.elementsEqual("D") || suitValue.elementsEqual("H")) {
+        let chosenCard = playingDeck.drawCard()
+        cardView.image = chosenCard.frontImage
+        
+        if chosenCard.color.elementsEqual("Red") {
             print("Take a drink!")
         } else {
             print("Give a drink!")
         }
+        
         let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
-        vc.previousCard = cardImage
-        vc.previousCardValue = value
+        vc.previousCard = chosenCard
+        vc.playingDeck = playingDeck
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
     @IBAction func redButtonPressed(_ sender: Any) {
-        let value = Int.random(in: 2...14)
-        let suitValue = suits[Int.random(in: 0...3)]
-        let cardImage = String(value) + suitValue
-        cardView.image = UIImage(named: cardImage)
-        if (suitValue.elementsEqual("C") || suitValue.elementsEqual("S")) {
+        let chosenCard = playingDeck.drawCard()
+        cardView.image = chosenCard.frontImage
+        
+        if chosenCard.color.elementsEqual("Black") {
             print("Take a drink!")
         } else {
             print("Give a drink!")
         }
+        
         let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
-        vc.previousCard = cardImage
-        vc.previousCardValue = value
+        vc.previousCard = chosenCard
+        vc.playingDeck = playingDeck
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
