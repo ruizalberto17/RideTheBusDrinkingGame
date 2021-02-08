@@ -110,7 +110,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2C" translatesAutoresizingMaskIntoConstraints="NO" id="DcH-yC-nZ4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="DcH-yC-nZ4">
                                         <rect key="frame" x="0.0" y="391" width="394" height="301"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Bd-jN-gJW" userLabel="Button Stack View">
@@ -200,10 +200,10 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSw-y1-wl4">
                                         <rect key="frame" x="5" y="391" width="384" height="301"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2C" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-aK-e30">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-aK-e30">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="146.5"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2C" translatesAutoresizingMaskIntoConstraints="NO" id="4bE-qR-eN0">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="4bE-qR-eN0">
                                                 <rect key="frame" x="0.0" y="154.5" width="384" height="146.5"/>
                                             </imageView>
                                         </subviews>
@@ -359,7 +359,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2C" width="691" height="1056"/>
         <image name="Background" width="414" height="896"/>
         <image name="black_button" width="96" height="96"/>
         <image name="gray_back" width="691" height="1056"/>
