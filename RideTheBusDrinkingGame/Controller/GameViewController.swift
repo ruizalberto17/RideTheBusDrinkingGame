@@ -12,35 +12,17 @@ import GameplayKit
 class GameViewController: UIViewController {
 
     @IBOutlet weak var cardView: UIImageView!
+    @IBOutlet weak var currentPlayerLabel: UILabel!
     
     var playingDeck: PlayingCardDeck = PlayingCardDeck()
+    var playerGroup: PlayerGroup = PlayerGroup()
+    var currentPlayer: Player!
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
-                
-                // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
-                
-                // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
-                
-                // Present the scene
-                if let view = self.view as! SKView? {
-                    view.presentScene(sceneNode)
-                    
-                    view.ignoresSiblingOrder = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                }
-            }
-        }
+        currentPlayer = playerGroup.group[index]
+        currentPlayerLabel.text = currentPlayer.name
     }
 
     override var shouldAutorotate: Bool {
@@ -62,36 +44,50 @@ class GameViewController: UIViewController {
     @IBAction func blackButtonPresed(_ sender: Any) {
         let chosenCard = playingDeck.drawCard()
         cardView.image = chosenCard.frontImage
-        
+        currentPlayer.addCard(cardToAdd: chosenCard)
         if chosenCard.color.elementsEqual("Red") {
             print("Take a drink!")
         } else {
             print("Give a drink!")
         }
-        
-        let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
-        vc.previousCard = chosenCard
-        vc.playingDeck = playingDeck
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        if index < playerGroup.group.count-1 {
+            continueToNextPlayer()
+        } else {
+            continueToNextRound()
+        }
     }
     
     @IBAction func redButtonPressed(_ sender: Any) {
         let chosenCard = playingDeck.drawCard()
         cardView.image = chosenCard.frontImage
-        
+        currentPlayer.addCard(cardToAdd: chosenCard)
         if chosenCard.color.elementsEqual("Black") {
             print("Take a drink!")
         } else {
             print("Give a drink!")
         }
         
-        let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
-        vc.previousCard = chosenCard
+        if index < playerGroup.group.count-1 {
+            continueToNextPlayer()
+        } else {
+            continueToNextRound()
+        }
+    }
+    
+    func continueToNextPlayer() {
+        let vc = storyboard?.instantiateViewController(identifier: "redOrBlackVC") as! GameViewController
+        vc.index = index + 1
         vc.playingDeck = playingDeck
+        vc.playerGroup = playerGroup
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
-    
+    func continueToNextRound() {
+        let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
+        vc.playerGroup = playerGroup
+        vc.playingDeck = playingDeck
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }

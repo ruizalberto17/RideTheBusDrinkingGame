@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		695C110525D10CF500F45D70 /* PlayerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C110425D10CF500F45D70 /* PlayerGroup.swift */; };
+		695C110D25D12FF600F45D70 /* PlayerHandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */; };
 		69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F6D25CDF98600228B01 /* AppDelegate.swift */; };
 		69BA6F7025CDF98600228B01 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F6F25CDF98600228B01 /* GameScene.sks */; };
 		69BA6F7225CDF98600228B01 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7125CDF98600228B01 /* Actions.sks */; };
@@ -20,6 +22,9 @@
 		69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */; };
 		69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */; };
 		69BA6FDA25CEA84300228B01 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */; };
+		69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA701025D0A90100228B01 /* PlayingCard.swift */; };
+		69BA701B25D0AD5F00228B01 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA701A25D0AD5F00228B01 /* PlayingCardDeck.swift */; };
+		69BA703F25D0E73400228B01 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA703E25D0E73400228B01 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		695C110425D10CF500F45D70 /* PlayerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGroup.swift; sourceTree = "<group>"; };
+		695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandsViewController.swift; sourceTree = "<group>"; };
 		69BA6F6A25CDF98600228B01 /* RideTheBusDrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideTheBusDrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F6D25CDF98600228B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BA6F6F25CDF98600228B01 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -59,6 +66,9 @@
 		69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideOrOutsideViewController.swift; sourceTree = "<group>"; };
 		69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSuitViewController.swift; sourceTree = "<group>"; };
 		69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		69BA701025D0A90100228B01 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		69BA701A25D0AD5F00228B01 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		69BA703E25D0E73400228B01 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,17 +119,16 @@
 		69BA6F6C25CDF98600228B01 /* RideTheBusDrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
+				69BA701F25D0B1DF00228B01 /* Resources */,
+				69BA6FFF25D0A6CA00228B01 /* Model */,
+				69BA702025D0B21400228B01 /* Controller */,
 				69BA6F6D25CDF98600228B01 /* AppDelegate.swift */,
+				69BA6F7C25CDF98D00228B01 /* Info.plist */,
+				69BA6F7725CDF98600228B01 /* Main.storyboard */,
+				69BA6F7325CDF98600228B01 /* GameScene.swift */,
 				69BA6F6F25CDF98600228B01 /* GameScene.sks */,
 				69BA6F7125CDF98600228B01 /* Actions.sks */,
-				69BA6F7325CDF98600228B01 /* GameScene.swift */,
-				69BA6F7525CDF98600228B01 /* GameViewController.swift */,
-				69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */,
-				69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */,
-				69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */,
-				69BA6F7725CDF98600228B01 /* Main.storyboard */,
 				69BA6F7A25CDF98D00228B01 /* Assets.xcassets */,
-				69BA6F7C25CDF98D00228B01 /* Info.plist */,
 				69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */,
 			);
 			path = RideTheBusDrinkingGame;
@@ -141,6 +150,36 @@
 				69BA6F9225CDF98E00228B01 /* Info.plist */,
 			);
 			path = RideTheBusDrinkingGameUITests;
+			sourceTree = "<group>";
+		};
+		69BA6FFF25D0A6CA00228B01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69BA701025D0A90100228B01 /* PlayingCard.swift */,
+				69BA701A25D0AD5F00228B01 /* PlayingCardDeck.swift */,
+				69BA703E25D0E73400228B01 /* Player.swift */,
+				695C110425D10CF500F45D70 /* PlayerGroup.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		69BA701F25D0B1DF00228B01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69BA702025D0B21400228B01 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69BA6F7525CDF98600228B01 /* GameViewController.swift */,
+				69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */,
+				69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */,
+				69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */,
+				695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +249,7 @@
 				TargetAttributes = {
 					69BA6F6925CDF98600228B01 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					69BA6F8025CDF98E00228B01 = {
 						CreatedOnToolsVersion = 12.4;
@@ -277,9 +317,14 @@
 			files = (
 				69BA6F7425CDF98600228B01 /* GameScene.swift in Sources */,
 				69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */,
+				69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */,
 				69BA6F7625CDF98600228B01 /* GameViewController.swift in Sources */,
 				69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */,
+				69BA701B25D0AD5F00228B01 /* PlayingCardDeck.swift in Sources */,
+				695C110525D10CF500F45D70 /* PlayerGroup.swift in Sources */,
 				69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */,
+				695C110D25D12FF600F45D70 /* PlayerHandsViewController.swift in Sources */,
+				69BA703F25D0E73400228B01 /* Player.swift in Sources */,
 				69BA6FB625CE34AA00228B01 /* GreaterOrLessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGame/Info.plist;
@@ -458,6 +504,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertoruiz.RideTheBusDrinkingGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -468,6 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGame/Info.plist;
@@ -478,6 +527,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertoruiz.RideTheBusDrinkingGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

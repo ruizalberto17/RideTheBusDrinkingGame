@@ -11,75 +11,89 @@ class GreaterOrLessViewController: UIViewController {
     
     @IBOutlet weak var cardToGuess: UIImageView!
     @IBOutlet weak var firstCard: UIImageView!
+    @IBOutlet weak var currentPlayerLabel: UILabel!
     
-    var previousCard: PlayingCard!
     var playingDeck: PlayingCardDeck!
+    var playerGroup: PlayerGroup!
+    var currentPlayer: Player!
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstCard.image = previousCard.frontImage
+        currentPlayer = playerGroup.group[index]
+        firstCard.image = currentPlayer.playerCards[0].frontImage
+        currentPlayerLabel.text = currentPlayer.name
     }
     
     @IBAction func lessThanTapped(_ sender: Any) {
         let chosenCard = playingDeck.drawCard()
         cardToGuess.image = chosenCard.frontImage
-        
-        let vc = storyboard?.instantiateViewController(identifier: "insideOrOutsideVC") as! InsideOrOutsideViewController
-        if(chosenCard.getRank() >= previousCard.getRank()) {
+        currentPlayer.addCard(cardToAdd: chosenCard)
+    
+        if(chosenCard.getRank() >= currentPlayer.playerCards[0].getRank()) {
             print("Take a drink!")
-            vc.smallerCard = previousCard
-            vc.largerCard = chosenCard
         } else {
             print("Give two drinks!")
-            vc.smallerCard = chosenCard
-            vc.largerCard = previousCard
         }
-        vc.playingDeck = playingDeck
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        
+        if index < playerGroup.group.count-1 {
+            continueToNextPlayer()
+        } else {
+            continueToNextRound()
+        }
     }
     
     @IBAction func equalToTapped(_ sender: Any) {
         let chosenCard = playingDeck.drawCard()
         cardToGuess.image = chosenCard.frontImage
+        currentPlayer.addCard(cardToAdd: chosenCard)
         
-        let vc = storyboard?.instantiateViewController(identifier: "insideOrOutsideVC") as! InsideOrOutsideViewController
-        if(chosenCard.getRank() == previousCard.getRank()) {
+        if(chosenCard.getRank() == currentPlayer.playerCards[0].getRank()) {
             print("Give two drinks!")
-            vc.smallerCard = chosenCard
-            vc.largerCard = previousCard
+
         } else {
             print("Take a drink!")
-            if(chosenCard.getRank() <= previousCard.getRank()) {
-                vc.smallerCard = chosenCard
-                vc.largerCard = previousCard
-            } else {
-                vc.smallerCard = previousCard
-                vc.largerCard = chosenCard
-            }
         }
-        vc.playingDeck = playingDeck
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        
+        if index < playerGroup.group.count-1 {
+            continueToNextPlayer()
+        } else {
+            continueToNextRound()
+        }
     }
     
     @IBAction func greaterThanTapped(_ sender: Any) {
         let chosenCard = playingDeck.drawCard()
         cardToGuess.image = chosenCard.frontImage
-        
-        let vc = storyboard?.instantiateViewController(identifier: "insideOrOutsideVC") as! InsideOrOutsideViewController
-        if(chosenCard.getRank() <= previousCard.getRank()) {
+        currentPlayer.addCard(cardToAdd: chosenCard)
+
+        if(chosenCard.getRank() <= currentPlayer.playerCards[0].getRank()) {
             print("Take a drink!")
-            vc.smallerCard = chosenCard
-            vc.largerCard = previousCard
         } else {
             print("Give two drinks!")
-            vc.smallerCard = previousCard
-            vc.largerCard = chosenCard
         }
+        
+        if index < playerGroup.group.count-1 {
+            continueToNextPlayer()
+        } else {
+            continueToNextRound()
+        }
+    }
+    
+    func continueToNextPlayer() {
+        let vc = storyboard?.instantiateViewController(identifier: "greaterOrLessVC") as! GreaterOrLessViewController
+        vc.index = index + 1
         vc.playingDeck = playingDeck
+        vc.playerGroup = playerGroup
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
+    func continueToNextRound() {
+        let vc = storyboard?.instantiateViewController(identifier: "insideOrOutsideVC") as! InsideOrOutsideViewController
+        vc.playerGroup = playerGroup
+        vc.playingDeck = playingDeck
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }

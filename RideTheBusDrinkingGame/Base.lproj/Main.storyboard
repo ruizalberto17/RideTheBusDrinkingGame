@@ -24,11 +24,17 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d4t-Dn-I0b">
                                 <rect key="frame" x="10" y="49" width="394" height="808"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Player" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wnx-im-YaI">
+                                        <rect key="frame" x="103.5" y="0.0" width="187" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="29"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="HMv-jX-C1y">
-                                        <rect key="frame" x="20" y="0.0" width="354" height="607"/>
+                                        <rect key="frame" x="20" y="52.5" width="354" height="587"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess whether the card will be black or red." textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-op-NQL">
-                                        <rect key="frame" x="15" y="627" width="364.5" height="65"/>
+                                        <rect key="frame" x="15" y="659.5" width="364.5" height="32.5"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="29"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -78,6 +84,7 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="HMv-jX-C1y" id="BEl-0e-5i7"/>
+                        <outlet property="currentPlayerLabel" destination="wnx-im-YaI" id="Yv0-0D-tC8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -98,11 +105,20 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2bY-9N-2AV">
                                 <rect key="frame" x="10" y="49" width="394" height="808"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Player" textAlignment="center" lineBreakMode="clip" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-Kb-Uzn" userLabel="Current Player">
+                                        <rect key="frame" x="126" y="0.0" width="142" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="f1j-qy-FNq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-dF-O2N">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="301"/>
+                                        <rect key="frame" x="0.0" y="70" width="394" height="266"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess whether the card will be less than, equal to, or greater than your previous card." textAlignment="center" lineBreakMode="clip" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9T-Qj-XV3">
-                                        <rect key="frame" x="21" y="321" width="352.5" height="50"/>
+                                        <rect key="frame" x="21" y="356" width="352.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="uS6-dS-cWc"/>
                                         </constraints>
@@ -111,7 +127,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="DcH-yC-nZ4">
-                                        <rect key="frame" x="0.0" y="391" width="394" height="301"/>
+                                        <rect key="frame" x="0.0" y="426" width="394" height="266"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Bd-jN-gJW" userLabel="Button Stack View">
                                         <rect key="frame" x="45" y="712" width="304" height="96"/>
@@ -164,12 +180,131 @@
                     </view>
                     <connections>
                         <outlet property="cardToGuess" destination="tZh-dF-O2N" id="hZR-et-jXb"/>
+                        <outlet property="currentPlayerLabel" destination="ZSs-Kb-Uzn" id="wgp-vU-nsQ"/>
                         <outlet property="firstCard" destination="DcH-yC-nZ4" id="aIX-DS-2Ue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXv-LI-rlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54" y="47"/>
+        </scene>
+        <!--Player Hands View Controller-->
+        <scene sceneID="Wbk-aZ-ey8">
+            <objects>
+                <viewController storyboardIdentifier="playerHandsVC" id="T4A-d6-tNd" customClass="PlayerHandsViewController" customModule="RideTheBusDrinkingGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5vh-tO-fdT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="z8V-74-b1i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yp0-VJ-FCc">
+                                <rect key="frame" x="10" y="49" width="394" height="808"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0I-VZ-Oy2">
+                                        <rect key="frame" x="155" y="0.0" width="84.5" height="134.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="23U-PM-oMl">
+                                        <rect key="frame" x="0.0" y="134.5" width="394" height="135"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-em-B8I">
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="135"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="0aK-v4-6lD">
+                                                <rect key="frame" x="98.5" y="0.0" width="98.5" height="135"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-0f-ywv">
+                                                <rect key="frame" x="197" y="0.0" width="98.5" height="135"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="7eA-1B-BeH">
+                                                <rect key="frame" x="295.5" y="0.0" width="98.5" height="135"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fs-UA-r5j">
+                                        <rect key="frame" x="142.5" y="269.5" width="109" height="134.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QFd-jm-UOM">
+                                        <rect key="frame" x="0.0" y="404" width="394" height="134.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="Ou2-0f-oJe">
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="ko9-g4-iWR">
+                                                <rect key="frame" x="98.5" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="5fb-lx-8OU">
+                                                <rect key="frame" x="197" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="GYg-EI-0wr">
+                                                <rect key="frame" x="295.5" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-K9-fgk">
+                                        <rect key="frame" x="152" y="538.5" width="90.5" height="135"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-oP-naZ">
+                                        <rect key="frame" x="0.0" y="673.5" width="394" height="134.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="ypj-CN-yYL">
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-xI-cRq">
+                                                <rect key="frame" x="98.5" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-aS-aTl">
+                                                <rect key="frame" x="197" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="tAE-l0-X9P">
+                                                <rect key="frame" x="295.5" y="0.0" width="98.5" height="134.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hRT-4A-NYG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hRT-4A-NYG" firstAttribute="trailing" secondItem="Yp0-VJ-FCc" secondAttribute="trailing" constant="10" id="3FV-8p-2jv"/>
+                            <constraint firstItem="Yp0-VJ-FCc" firstAttribute="leading" secondItem="hRT-4A-NYG" secondAttribute="leading" constant="10" id="c05-1R-vA1"/>
+                            <constraint firstItem="Yp0-VJ-FCc" firstAttribute="top" secondItem="hRT-4A-NYG" secondAttribute="top" constant="5" id="kmy-50-A02"/>
+                            <constraint firstItem="hRT-4A-NYG" firstAttribute="bottom" secondItem="Yp0-VJ-FCc" secondAttribute="bottom" constant="5" id="saP-a9-dI7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstPlayerLabel" destination="g0I-VZ-Oy2" id="8cN-Fe-LZL"/>
+                        <outlet property="p1card1" destination="W2O-em-B8I" id="Zx0-g1-iUK"/>
+                        <outlet property="p1card2" destination="0aK-v4-6lD" id="HPj-Nu-tPa"/>
+                        <outlet property="p1card3" destination="I8f-0f-ywv" id="lqz-4o-CYg"/>
+                        <outlet property="p1card4" destination="7eA-1B-BeH" id="Q7Z-s5-YE8"/>
+                        <outlet property="p2card1" destination="Ou2-0f-oJe" id="W8l-vi-FUe"/>
+                        <outlet property="p2card2" destination="ko9-g4-iWR" id="wvi-Il-hm6"/>
+                        <outlet property="p2card3" destination="5fb-lx-8OU" id="q6K-RK-vAo"/>
+                        <outlet property="p2card4" destination="GYg-EI-0wr" id="Gfa-4q-tfE"/>
+                        <outlet property="p3card1" destination="ypj-CN-yYL" id="Gfs-N5-BXM"/>
+                        <outlet property="p3card2" destination="kPp-xI-cRq" id="19v-aB-dRw"/>
+                        <outlet property="p3card3" destination="bkQ-aS-aTl" id="N25-g6-5h6"/>
+                        <outlet property="p3card4" destination="tAE-l0-X9P" id="xuF-SE-4RX"/>
+                        <outlet property="secondPlayerLabel" destination="6fs-UA-r5j" id="yo1-g1-W3c"/>
+                        <outlet property="thirdPlayerLabel" destination="gPw-K9-fgk" id="FBu-Qd-de4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMY-TF-rUo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="258"/>
         </scene>
         <!--Inside Or Outside View Controller-->
         <scene sceneID="l5s-IS-wqf">
@@ -185,11 +320,23 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ECZ-7x-koD">
                                 <rect key="frame" x="10" y="49" width="394" height="808"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Player" textAlignment="center" lineBreakMode="clip" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQg-3O-hZ2">
+                                        <rect key="frame" x="126" y="0.0" width="142" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="laz-Cb-3pw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="OM4-Mz-2Rz">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="301"/>
+                                        <rect key="frame" x="0.0" y="70" width="394" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="ETz-dU-QZn"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess whether the card will be inside or outside your cards. (Ace is 1)" textAlignment="center" lineBreakMode="clip" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIv-RJ-pQl">
-                                        <rect key="frame" x="0.0" y="321" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="390" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="G1A-IF-62b"/>
                                         </constraints>
@@ -197,22 +344,26 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSw-y1-wl4">
-                                        <rect key="frame" x="5" y="391" width="384" height="301"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSw-y1-wl4">
+                                        <rect key="frame" x="5" y="460" width="384" height="250"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-aK-e30">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="146.5"/>
-                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="4bE-qR-eN0">
-                                                <rect key="frame" x="0.0" y="154.5" width="384" height="146.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="250"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-aK-e30">
+                                                <rect key="frame" x="196" y="0.0" width="188" height="250"/>
                                             </imageView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="Chr-hg-anx"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="SSB-yH-Dbd"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Eox-wK-xJr" userLabel="Button Stack View">
-                                        <rect key="frame" x="93" y="712" width="208" height="96"/>
+                                        <rect key="frame" x="93" y="730" width="208" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-wU-yie">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="78"/>
                                                 <state key="normal" title="Inside" backgroundImage="black_button">
                                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                                 </state>
@@ -222,7 +373,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5H5-Ra-TFv">
-                                                <rect key="frame" x="112" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="112" y="0.0" width="96" height="78"/>
                                                 <state key="normal" title="Outside" backgroundImage="black_button">
                                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                                 </state>
@@ -255,6 +406,7 @@
                     </view>
                     <connections>
                         <outlet property="cardToGuess" destination="OM4-Mz-2Rz" id="7S6-xt-FwL"/>
+                        <outlet property="currentPlayerLabel" destination="dQg-3O-hZ2" id="EWu-e4-Wr4"/>
                         <outlet property="lowerCard" destination="4bE-qR-eN0" id="tYm-TS-M2J"/>
                         <outlet property="upperCard" destination="xgN-aK-e30" id="nAE-6c-hTu"/>
                     </connections>
@@ -277,8 +429,14 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZTu-gv-FMI">
                                 <rect key="frame" x="10" y="49" width="394" height="808"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Player" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-zL-g5r">
+                                        <rect key="frame" x="103.5" y="0.0" width="187" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="29"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_back" translatesAutoresizingMaskIntoConstraints="NO" id="Tnr-B0-mjE">
-                                        <rect key="frame" x="20" y="0.0" width="354" height="639.5"/>
+                                        <rect key="frame" x="20" y="52.5" width="354" height="587"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the suit of the card." textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-D0-U5A">
                                         <rect key="frame" x="27.5" y="659.5" width="339" height="32.5"/>
@@ -351,6 +509,7 @@
                     </view>
                     <connections>
                         <outlet property="cardToGuess" destination="Tnr-B0-mjE" id="Hg9-HP-0no"/>
+                        <outlet property="currentPlayerLabel" destination="a6e-zL-g5r" id="Aqs-75-glM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfF-9M-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
