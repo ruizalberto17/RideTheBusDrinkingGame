@@ -14,11 +14,15 @@ class PlayingCard {
     internal var frontImage: UIImage
     internal var backImage: UIImage
     internal var isFaceUp: Bool
+    internal var backImageName: String
+    internal var frontImageName: String
     
     init() {
         backImage = UIImage(named: "gray_back")!
+        backImageName = "gray_back"
         isFaceUp = false
         frontImage = UIImage(named: "gray_back")!
+        frontImageName = "gray_back"
         rank = Int()
         suit = String()
         color = "Red"
@@ -28,6 +32,7 @@ class PlayingCard {
         self.rank = withRank
         self.suit = ofSuit
         frontImage = UIImage(named: "\(String(rank)+suit)")!
+        frontImageName = String(rank) + suit
         if ofSuit.elementsEqual("Diamond") || ofSuit.elementsEqual("Heart") {
             color = "Red"
         } else {
@@ -35,6 +40,7 @@ class PlayingCard {
         }
         backImage = UIImage(named: "gray_back")!
         isFaceUp = false
+        backImageName = "gray_back"
     }
     
     class func validRanks () -> [Int] {

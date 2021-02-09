@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		695C110525D10CF500F45D70 /* PlayerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C110425D10CF500F45D70 /* PlayerGroup.swift */; };
 		695C110D25D12FF600F45D70 /* PlayerHandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */; };
+		695C111E25D220D000F45D70 /* BlackOrRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C111D25D220D000F45D70 /* BlackOrRedView.swift */; };
+		695C114825D2831700F45D70 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C114725D2831700F45D70 /* Helper.swift */; };
+		695C114D25D2836A00F45D70 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C114C25D2836A00F45D70 /* ViewRouter.swift */; };
+		695C115225D2839800F45D70 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C115125D2839800F45D70 /* MotherView.swift */; };
+		695C115725D283F800F45D70 /* RideTheDrinkingGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C115625D283F800F45D70 /* RideTheDrinkingGameApp.swift */; };
+		695C116525D292B700F45D70 /* GreaterOrLessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C116425D292B700F45D70 /* GreaterOrLessView.swift */; };
+		695C116A25D29FD600F45D70 /* InsideOrOutsideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C116925D29FD600F45D70 /* InsideOrOutsideView.swift */; };
+		695C116F25D2B3BF00F45D70 /* PickSuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C116E25D2B3BF00F45D70 /* PickSuitView.swift */; };
+		695C117425D2BA2800F45D70 /* PlayerHandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C117325D2BA2800F45D70 /* PlayerHandsView.swift */; };
 		69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F6D25CDF98600228B01 /* AppDelegate.swift */; };
 		69BA6F7025CDF98600228B01 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F6F25CDF98600228B01 /* GameScene.sks */; };
 		69BA6F7225CDF98600228B01 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7125CDF98600228B01 /* Actions.sks */; };
@@ -47,6 +56,15 @@
 /* Begin PBXFileReference section */
 		695C110425D10CF500F45D70 /* PlayerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGroup.swift; sourceTree = "<group>"; };
 		695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandsViewController.swift; sourceTree = "<group>"; };
+		695C111D25D220D000F45D70 /* BlackOrRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackOrRedView.swift; sourceTree = "<group>"; };
+		695C114725D2831700F45D70 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		695C114C25D2836A00F45D70 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		695C115125D2839800F45D70 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		695C115625D283F800F45D70 /* RideTheDrinkingGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTheDrinkingGameApp.swift; sourceTree = "<group>"; };
+		695C116425D292B700F45D70 /* GreaterOrLessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterOrLessView.swift; sourceTree = "<group>"; };
+		695C116925D29FD600F45D70 /* InsideOrOutsideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideOrOutsideView.swift; sourceTree = "<group>"; };
+		695C116E25D2B3BF00F45D70 /* PickSuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSuitView.swift; sourceTree = "<group>"; };
+		695C117325D2BA2800F45D70 /* PlayerHandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandsView.swift; sourceTree = "<group>"; };
 		69BA6F6A25CDF98600228B01 /* RideTheBusDrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideTheBusDrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F6D25CDF98600228B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BA6F6F25CDF98600228B01 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -96,6 +114,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		695C111125D2207900F45D70 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				695C111D25D220D000F45D70 /* BlackOrRedView.swift */,
+				695C115125D2839800F45D70 /* MotherView.swift */,
+				695C115625D283F800F45D70 /* RideTheDrinkingGameApp.swift */,
+				695C116425D292B700F45D70 /* GreaterOrLessView.swift */,
+				695C116925D29FD600F45D70 /* InsideOrOutsideView.swift */,
+				695C116E25D2B3BF00F45D70 /* PickSuitView.swift */,
+				695C117325D2BA2800F45D70 /* PlayerHandsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		69BA6F6125CDF98500228B01 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +151,7 @@
 		69BA6F6C25CDF98600228B01 /* RideTheBusDrinkingGame */ = {
 			isa = PBXGroup;
 			children = (
+				695C111125D2207900F45D70 /* Views */,
 				69BA701F25D0B1DF00228B01 /* Resources */,
 				69BA6FFF25D0A6CA00228B01 /* Model */,
 				69BA702025D0B21400228B01 /* Controller */,
@@ -166,6 +199,8 @@
 		69BA701F25D0B1DF00228B01 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				695C114725D2831700F45D70 /* Helper.swift */,
+				695C114C25D2836A00F45D70 /* ViewRouter.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -316,16 +351,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BA6F7425CDF98600228B01 /* GameScene.swift in Sources */,
+				695C114D25D2836A00F45D70 /* ViewRouter.swift in Sources */,
+				695C117425D2BA2800F45D70 /* PlayerHandsView.swift in Sources */,
 				69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */,
 				69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */,
+				695C115225D2839800F45D70 /* MotherView.swift in Sources */,
+				695C116525D292B700F45D70 /* GreaterOrLessView.swift in Sources */,
 				69BA6F7625CDF98600228B01 /* GameViewController.swift in Sources */,
 				69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */,
+				695C116F25D2B3BF00F45D70 /* PickSuitView.swift in Sources */,
 				69BA701B25D0AD5F00228B01 /* PlayingCardDeck.swift in Sources */,
 				695C110525D10CF500F45D70 /* PlayerGroup.swift in Sources */,
 				69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */,
 				695C110D25D12FF600F45D70 /* PlayerHandsViewController.swift in Sources */,
 				69BA703F25D0E73400228B01 /* Player.swift in Sources */,
+				695C116A25D29FD600F45D70 /* InsideOrOutsideView.swift in Sources */,
+				695C114825D2831700F45D70 /* Helper.swift in Sources */,
+				695C115725D283F800F45D70 /* RideTheDrinkingGameApp.swift in Sources */,
 				69BA6FB625CE34AA00228B01 /* GreaterOrLessViewController.swift in Sources */,
+				695C111E25D220D000F45D70 /* BlackOrRedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -478,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -497,7 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,7 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,7 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,7 +607,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,7 +649,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS74BPCQZE;
 				INFOPLIST_FILE = RideTheBusDrinkingGameUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

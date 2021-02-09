@@ -21,9 +21,24 @@ class Player {
         playerCards.append(cardToAdd)
     }
     
-    func getPlayerCards() -> [PlayingCard]{
+    func getPlayerCards() -> [PlayingCard] {
         return self.playerCards
     }
     
+    func getLargest() -> PlayingCard {
+        if self.playerCards[0].getRank() > self.playerCards[1].getRank() {
+            return self.playerCards[0]
+        } else {
+            return self.playerCards[1]
+        }
+    }
+    
+    func getSmallest() -> PlayingCard {
+        if self.playerCards[0].getRank() < self.playerCards[1].getRank() {
+            return self.playerCards[0]
+        } else {
+            return self.playerCards[1]
+        }
+    }
     
 }
