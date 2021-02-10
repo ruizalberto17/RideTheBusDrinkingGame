@@ -10,11 +10,11 @@ import SwiftUI
 struct InsideOrOutsideView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var chosenCard: PlayingCard
+    @State var chosenCard: Card
     
     var body: some View {
-        let largerCard = viewRouter.playerGroup.group[viewRouter.currentPlayer].getLargest()
-        let smallerCard = viewRouter.playerGroup.group[viewRouter.currentPlayer].getSmallest()
+        let largerCard = viewRouter.getCurrentPlayer().getLargest()
+        let smallerCard = viewRouter.getCurrentPlayer().getSmallest()
         
         ZStack {
             if #available(iOS 14.0, *) {
@@ -24,17 +24,17 @@ struct InsideOrOutsideView: View {
             }
             VStack {
                 Spacer()
-                Text(viewRouter.playerGroup.group[viewRouter.currentPlayer].name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Spacer()
-                Image(chosenCard.frontImageName).resizable().scaledToFit()
+                Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
                 Spacer()
                 Text("Guess whether the card will be inside or outside your cards.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
                 Spacer()
                 HStack(alignment: .center){
                     Spacer()
-                    Image(smallerCard.frontImageName).resizable().scaledToFit()
+                    Image(smallerCard.getFrontImageName()).resizable().scaledToFit()
                     Spacer()
-                    Image(largerCard.frontImageName).resizable().scaledToFit()
+                    Image(largerCard.getFrontImageName()).resizable().scaledToFit()
                     Spacer()
                 }
                 Spacer()
@@ -70,8 +70,8 @@ struct InsideOrOutsideView: View {
     }
     
     func revealCard() {
-        chosenCard = viewRouter.playingCardDeck.drawCard()
-        viewRouter.playerGroup.group[viewRouter.currentPlayer].addCard(cardToAdd: chosenCard)
+        chosenCard = viewRouter.deck.drawCard()
+        viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
     }
     
     func checkIfEndOfRound() {
@@ -100,7 +100,7 @@ struct InsideOrOutsideView: View {
 struct InsideOrOutside_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            InsideOrOutsideView(chosenCard: PlayingCard()).environmentObject(ViewRouter())
+            InsideOrOutsideView(chosenCard: Card()).environmentObject(ViewRouter())
         }
     }
 }

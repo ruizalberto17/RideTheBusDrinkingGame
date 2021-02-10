@@ -10,7 +10,7 @@ import SwiftUI
 struct GreaterOrLessView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var chosenCard: PlayingCard
+    @State var chosenCard: Card
     
     var body: some View {
         ZStack {
@@ -21,23 +21,23 @@ struct GreaterOrLessView: View {
             }
             VStack {
                 Spacer()
-                Text(viewRouter.playerGroup.group[viewRouter.currentPlayer].name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
                 Spacer()
-                Image(chosenCard.frontImageName).resizable().scaledToFit()
+                Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
                 
                 Spacer()
                 Text("Guess whether the card will be less than, equal to, or greater than your card.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
                 
                 Spacer()
-                Image(viewRouter.playerGroup.group[viewRouter.currentPlayer].playerCards[0].frontImageName).resizable().scaledToFit()
+                Image(viewRouter.getCurrentPlayer().playerCards[0].getFrontImageName()).resizable().scaledToFit()
                 Spacer()
                 
                 HStack(alignment: .center) {
                     Spacer()
                     Button(action: { withAnimation{
                         revealCard()
-                        if(chosenCard.getRank() >= viewRouter.playerGroup.group[viewRouter.currentPlayer].playerCards[0].getRank()) {
+                        if(chosenCard.getRank() >= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
                             print("Take a drink!")
                         } else {
                             print("Give two drinks!")
@@ -50,7 +50,7 @@ struct GreaterOrLessView: View {
                     Spacer()
                     Button(action: { withAnimation{
                         revealCard()
-                        if(chosenCard.getRank() == viewRouter.playerGroup.group[viewRouter.currentPlayer].playerCards[0].getRank()) {
+                        if(chosenCard.getRank() == viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
                             print("Give two drinks!")
                         } else {
                             print("Take a drink!")
@@ -63,7 +63,7 @@ struct GreaterOrLessView: View {
                     Spacer()
                     Button(action: { withAnimation{
                         revealCard()
-                        if(chosenCard.getRank() <= viewRouter.playerGroup.group[viewRouter.currentPlayer].playerCards[0].getRank()) {
+                        if(chosenCard.getRank() <= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
                             print("Give two drinks!")
                         } else {
                             print("Take a drink!")
@@ -79,8 +79,8 @@ struct GreaterOrLessView: View {
     }
     
     func revealCard() {
-        chosenCard = viewRouter.playingCardDeck.drawCard()
-        viewRouter.playerGroup.group[viewRouter.currentPlayer].addCard(cardToAdd: chosenCard)
+        chosenCard = viewRouter.deck.drawCard()
+        viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
     }
     
     func checkIfEndOfRound() {
@@ -109,7 +109,7 @@ struct GreaterOrLessView: View {
 struct GreaterOrLessView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GreaterOrLessView(chosenCard: PlayingCard()).environmentObject(ViewRouter())
+            GreaterOrLessView(chosenCard: Card()).environmentObject(ViewRouter())
         }
     }
 }

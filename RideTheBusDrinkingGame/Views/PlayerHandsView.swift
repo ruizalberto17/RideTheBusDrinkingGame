@@ -19,7 +19,14 @@ struct PlayerHandsView: View {
                 Image("Background")
             }
             VStack{
-                
+                ForEach(viewRouter.playerGroup.group, id: \.self) { player in
+                    HStack(alignment: .center) {
+                        Text(player.name).bold().font(.title)
+                        ForEach(player.playerCards, id: \.self) { card in
+                            Image(card.getFrontImageName()).resizable().scaledToFit()
+                        }
+                    }
+                }
             }
         }
     }
@@ -30,4 +37,3 @@ struct PlayerHandsView_Previews: PreviewProvider {
         PlayerHandsView().environmentObject(ViewRouter())
     }
 }
-

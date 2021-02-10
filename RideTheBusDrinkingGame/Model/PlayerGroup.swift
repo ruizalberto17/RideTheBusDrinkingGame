@@ -7,12 +7,17 @@
 
 import Foundation
 
-class PlayerGroup {
-    internal var group = [Player]()
+struct PlayerGroup: Hashable, Codable {
+    var group: [Player]
     
     init() {
-        group.append(Player(name: "Meep", id: group.count+1))
-        group.append(Player(name: "Mop", id: group.count+1))
-        group.append(Player(name: "Moop", id: group.count+1))
+        self.group = []
+        self.group.append(Player(name: "Meep", id: group.count+1))
+        self.group.append(Player(name: "Mop", id: group.count+1))
+        self.group.append(Player(name: "Moop", id: group.count+1))
+    }
+    
+    func getGroup() -> [Player] {
+        return self.group
     }
 }

@@ -1,24 +1,25 @@
 //
-//  Player.swift
+//  PlayerModel.swift
 //  RideTheBusDrinkingGame
 //
-//  Created by Alberto Ruiz on 2/7/21.
+//  Created by Alberto Ruiz on 2/9/21.
 //
 
 import Foundation
 
-class Playerss {
-    internal var name: String = String()
-    internal var playerCards = [Card]()
-    internal var id: Int = Int()
+struct Player: Hashable, Codable {
+    var name: String
+    var playerCards: [Card]
+    var id: Int
     
     init(name: String, id: Int) {
         self.name = name
         self.id = id
+        self.playerCards = []
     }
     
-    func addCard(cardToAdd: Card) {
-        playerCards.append(cardToAdd)
+    mutating func addCard(cardToAdd: Card) {
+        self.playerCards.append(cardToAdd)
     }
     
     func getPlayerCards() -> [Card] {
@@ -40,5 +41,4 @@ class Playerss {
             return self.playerCards[1]
         }
     }
-    
 }

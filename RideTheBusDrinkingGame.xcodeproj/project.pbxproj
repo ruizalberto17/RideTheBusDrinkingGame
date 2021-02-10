@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		695C110525D10CF500F45D70 /* PlayerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C110425D10CF500F45D70 /* PlayerGroup.swift */; };
-		695C110D25D12FF600F45D70 /* PlayerHandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */; };
 		695C111E25D220D000F45D70 /* BlackOrRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C111D25D220D000F45D70 /* BlackOrRedView.swift */; };
 		695C114825D2831700F45D70 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C114725D2831700F45D70 /* Helper.swift */; };
 		695C114D25D2836A00F45D70 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C114C25D2836A00F45D70 /* ViewRouter.swift */; };
@@ -18,18 +17,18 @@
 		695C116A25D29FD600F45D70 /* InsideOrOutsideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C116925D29FD600F45D70 /* InsideOrOutsideView.swift */; };
 		695C116F25D2B3BF00F45D70 /* PickSuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C116E25D2B3BF00F45D70 /* PickSuitView.swift */; };
 		695C117425D2BA2800F45D70 /* PlayerHandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C117325D2BA2800F45D70 /* PlayerHandsView.swift */; };
+		695C117E25D3428400F45D70 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C117D25D3428400F45D70 /* CardModel.swift */; };
+		695C118625D3449100F45D70 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C118525D3449100F45D70 /* CardData.swift */; };
+		695C118B25D34E2500F45D70 /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C118A25D34E2500F45D70 /* DeckModel.swift */; };
+		695C119325D3604500F45D70 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C119225D3604500F45D70 /* PlayerModel.swift */; };
 		69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F6D25CDF98600228B01 /* AppDelegate.swift */; };
 		69BA6F7025CDF98600228B01 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F6F25CDF98600228B01 /* GameScene.sks */; };
 		69BA6F7225CDF98600228B01 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7125CDF98600228B01 /* Actions.sks */; };
 		69BA6F7425CDF98600228B01 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F7325CDF98600228B01 /* GameScene.swift */; };
-		69BA6F7625CDF98600228B01 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F7525CDF98600228B01 /* GameViewController.swift */; };
 		69BA6F7925CDF98600228B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7725CDF98600228B01 /* Main.storyboard */; };
 		69BA6F7B25CDF98D00228B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7A25CDF98D00228B01 /* Assets.xcassets */; };
 		69BA6F8625CDF98E00228B01 /* RideTheBusDrinkingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F8525CDF98E00228B01 /* RideTheBusDrinkingGameTests.swift */; };
 		69BA6F9125CDF98E00228B01 /* RideTheBusDrinkingGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F9025CDF98E00228B01 /* RideTheBusDrinkingGameUITests.swift */; };
-		69BA6FB625CE34AA00228B01 /* GreaterOrLessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */; };
-		69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */; };
-		69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */; };
 		69BA6FDA25CEA84300228B01 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */; };
 		69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA701025D0A90100228B01 /* PlayingCard.swift */; };
 		69BA701B25D0AD5F00228B01 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA701A25D0AD5F00228B01 /* PlayingCardDeck.swift */; };
@@ -55,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		695C110425D10CF500F45D70 /* PlayerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGroup.swift; sourceTree = "<group>"; };
-		695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandsViewController.swift; sourceTree = "<group>"; };
 		695C111D25D220D000F45D70 /* BlackOrRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackOrRedView.swift; sourceTree = "<group>"; };
 		695C114725D2831700F45D70 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		695C114C25D2836A00F45D70 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -65,12 +63,15 @@
 		695C116925D29FD600F45D70 /* InsideOrOutsideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideOrOutsideView.swift; sourceTree = "<group>"; };
 		695C116E25D2B3BF00F45D70 /* PickSuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSuitView.swift; sourceTree = "<group>"; };
 		695C117325D2BA2800F45D70 /* PlayerHandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandsView.swift; sourceTree = "<group>"; };
+		695C117D25D3428400F45D70 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		695C118525D3449100F45D70 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		695C118A25D34E2500F45D70 /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
+		695C119225D3604500F45D70 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		69BA6F6A25CDF98600228B01 /* RideTheBusDrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideTheBusDrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F6D25CDF98600228B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BA6F6F25CDF98600228B01 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		69BA6F7125CDF98600228B01 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		69BA6F7325CDF98600228B01 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		69BA6F7525CDF98600228B01 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		69BA6F7825CDF98600228B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69BA6F7A25CDF98D00228B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69BA6F7C25CDF98D00228B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,9 +81,6 @@
 		69BA6F8C25CDF98E00228B01 /* RideTheBusDrinkingGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideTheBusDrinkingGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F9025CDF98E00228B01 /* RideTheBusDrinkingGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTheBusDrinkingGameUITests.swift; sourceTree = "<group>"; };
 		69BA6F9225CDF98E00228B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterOrLessViewController.swift; sourceTree = "<group>"; };
-		69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideOrOutsideViewController.swift; sourceTree = "<group>"; };
-		69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSuitViewController.swift; sourceTree = "<group>"; };
 		69BA6FD925CEA84300228B01 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		69BA701025D0A90100228B01 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		69BA701A25D0AD5F00228B01 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				695C111125D2207900F45D70 /* Views */,
 				69BA701F25D0B1DF00228B01 /* Resources */,
 				69BA6FFF25D0A6CA00228B01 /* Model */,
-				69BA702025D0B21400228B01 /* Controller */,
 				69BA6F6D25CDF98600228B01 /* AppDelegate.swift */,
 				69BA6F7C25CDF98D00228B01 /* Info.plist */,
 				69BA6F7725CDF98600228B01 /* Main.storyboard */,
@@ -192,6 +189,10 @@
 				69BA701A25D0AD5F00228B01 /* PlayingCardDeck.swift */,
 				69BA703E25D0E73400228B01 /* Player.swift */,
 				695C110425D10CF500F45D70 /* PlayerGroup.swift */,
+				695C117D25D3428400F45D70 /* CardModel.swift */,
+				695C118525D3449100F45D70 /* CardData.swift */,
+				695C118A25D34E2500F45D70 /* DeckModel.swift */,
+				695C119225D3604500F45D70 /* PlayerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,18 +204,6 @@
 				695C114C25D2836A00F45D70 /* ViewRouter.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		69BA702025D0B21400228B01 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				69BA6F7525CDF98600228B01 /* GameViewController.swift */,
-				69BA6FB525CE34AA00228B01 /* GreaterOrLessViewController.swift */,
-				69BA6FBD25CE4FC000228B01 /* InsideOrOutsideViewController.swift */,
-				69BA6FC225CE64E100228B01 /* PickSuitViewController.swift */,
-				695C110C25D12FF600F45D70 /* PlayerHandsViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,24 +340,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BA6F7425CDF98600228B01 /* GameScene.swift in Sources */,
+				695C117E25D3428400F45D70 /* CardModel.swift in Sources */,
 				695C114D25D2836A00F45D70 /* ViewRouter.swift in Sources */,
+				695C118625D3449100F45D70 /* CardData.swift in Sources */,
 				695C117425D2BA2800F45D70 /* PlayerHandsView.swift in Sources */,
-				69BA6FBE25CE4FC100228B01 /* InsideOrOutsideViewController.swift in Sources */,
 				69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */,
 				695C115225D2839800F45D70 /* MotherView.swift in Sources */,
 				695C116525D292B700F45D70 /* GreaterOrLessView.swift in Sources */,
-				69BA6F7625CDF98600228B01 /* GameViewController.swift in Sources */,
 				69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */,
 				695C116F25D2B3BF00F45D70 /* PickSuitView.swift in Sources */,
 				69BA701B25D0AD5F00228B01 /* PlayingCardDeck.swift in Sources */,
+				695C119325D3604500F45D70 /* PlayerModel.swift in Sources */,
 				695C110525D10CF500F45D70 /* PlayerGroup.swift in Sources */,
-				69BA6FC325CE64E100228B01 /* PickSuitViewController.swift in Sources */,
-				695C110D25D12FF600F45D70 /* PlayerHandsViewController.swift in Sources */,
+				695C118B25D34E2500F45D70 /* DeckModel.swift in Sources */,
 				69BA703F25D0E73400228B01 /* Player.swift in Sources */,
 				695C116A25D29FD600F45D70 /* InsideOrOutsideView.swift in Sources */,
 				695C114825D2831700F45D70 /* Helper.swift in Sources */,
 				695C115725D283F800F45D70 /* RideTheDrinkingGameApp.swift in Sources */,
-				69BA6FB625CE34AA00228B01 /* GreaterOrLessViewController.swift in Sources */,
 				695C111E25D220D000F45D70 /* BlackOrRedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

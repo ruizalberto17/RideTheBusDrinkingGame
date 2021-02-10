@@ -10,7 +10,7 @@ import SwiftUI
 struct BlackOrRedView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var chosenCard: PlayingCard
+    @State var chosenCard: Card
     
     var body: some View {
         ZStack {
@@ -21,9 +21,9 @@ struct BlackOrRedView: View {
             }
             VStack {
                 Spacer()
-                Text(viewRouter.playerGroup.group[viewRouter.currentPlayer].name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Spacer()
-                Image(chosenCard.frontImageName).resizable().scaledToFit()
+                Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
                 Spacer()
                 Text("Guess where the card will be black or red.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
                 Spacer()
@@ -31,7 +31,7 @@ struct BlackOrRedView: View {
                     Spacer()
                     Button(action: { withAnimation{
                         revealCard()
-                        if chosenCard.color.elementsEqual("Red") {
+                        if chosenCard.getColor().elementsEqual("Red") {
                             print("Take a drink!")
                         } else {
                             print("Give a drink!")
@@ -43,7 +43,7 @@ struct BlackOrRedView: View {
                     Spacer()
                     Button(action:  { withAnimation{
                         revealCard()
-                        if chosenCard.color.elementsEqual("Black") {
+                        if chosenCard.getColor().elementsEqual("Black") {
                             print("Take a drink!")
                         } else {
                             print("Give a drink!")
@@ -60,8 +60,8 @@ struct BlackOrRedView: View {
     }
     
     func revealCard() {
-        chosenCard = viewRouter.playingCardDeck.drawCard()
-        viewRouter.playerGroup.group[viewRouter.currentPlayer].addCard(cardToAdd: chosenCard)
+        chosenCard = viewRouter.deck.drawCard()
+        viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
     }
     
     func checkIfEndOfRound() {
@@ -90,7 +90,7 @@ struct BlackOrRedView: View {
 struct BlackOrRedView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            BlackOrRedView(chosenCard: PlayingCard()).environmentObject(ViewRouter())
+            BlackOrRedView(chosenCard: Card()).environmentObject(ViewRouter())
         }
     }
 }

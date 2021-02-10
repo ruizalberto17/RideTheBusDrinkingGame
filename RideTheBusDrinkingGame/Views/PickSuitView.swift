@@ -10,7 +10,7 @@ import SwiftUI
 struct PickSuitView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var chosenCard: PlayingCard
+    @State var chosenCard: Card
     
     var body: some View {
         ZStack {
@@ -21,9 +21,9 @@ struct PickSuitView: View {
             }
             VStack {
                 Spacer()
-                Text(viewRouter.playerGroup.group[viewRouter.currentPlayer].name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Spacer()
-                Image(chosenCard.frontImageName).resizable().scaledToFit()
+                Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
                 Spacer()
                 Text("Guess the suit of the card.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
                 Spacer()
@@ -84,8 +84,8 @@ struct PickSuitView: View {
     }
     
     func revealCard() {
-        chosenCard = viewRouter.playingCardDeck.drawCard()
-        viewRouter.playerGroup.group[viewRouter.currentPlayer].addCard(cardToAdd: chosenCard)
+        chosenCard = viewRouter.deck.drawCard()
+        viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
     }
     
     func checkIfEndOfRound() {
@@ -107,14 +107,14 @@ struct PickSuitView: View {
     
     func continueToNextRound() {
         viewRouter.currentPlayer = 0
-        viewRouter.currentPage = .page7
+        viewRouter.currentPage = .page9
     }
 }
 
 struct PickSuit_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PickSuitView(chosenCard: PlayingCard()).environmentObject(ViewRouter())
+            PickSuitView(chosenCard: Card()).environmentObject(ViewRouter())
         }
     }
 }
