@@ -9,7 +9,7 @@ import SwiftUI
 
 class ViewRouter: ObservableObject {
     
-    @Published var currentPage: Page = .page1
+    @Published var currentPage: Page = .page10
     @Published var playerGroup: PlayerGroup = PlayerGroup()
     @Published var deck: Deck = Deck.createDeck()
     @Published var currentPlayer: Int = 0

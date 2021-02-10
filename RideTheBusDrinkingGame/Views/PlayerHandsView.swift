@@ -19,6 +19,7 @@ struct PlayerHandsView: View {
                 Image("Background")
             }
             VStack{
+                Spacer()
                 ForEach(viewRouter.playerGroup.group, id: \.self) { player in
                     HStack(alignment: .center) {
                         Text(player.name).bold().font(.title)
@@ -27,6 +28,7 @@ struct PlayerHandsView: View {
                         }
                     }
                 }
+                Spacer()
             }
         }
     }

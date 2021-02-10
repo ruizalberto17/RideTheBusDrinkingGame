@@ -15,4 +15,5 @@ enum Page {
     case page7
     case page8
     case page9
+    case page10
 }

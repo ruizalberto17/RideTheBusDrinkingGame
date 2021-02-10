@@ -10,11 +10,9 @@ import Foundation
 struct Player: Hashable, Codable {
     var name: String
     var playerCards: [Card]
-    var id: Int
     
-    init(name: String, id: Int) {
+    init(name: String) {
         self.name = name
-        self.id = id
         self.playerCards = []
     }
     

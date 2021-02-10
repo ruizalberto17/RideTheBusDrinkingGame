@@ -12,9 +12,13 @@ struct PlayerGroup: Hashable, Codable {
     
     init() {
         self.group = []
-        self.group.append(Player(name: "Meep", id: group.count+1))
-        self.group.append(Player(name: "Mop", id: group.count+1))
-        self.group.append(Player(name: "Moop", id: group.count+1))
+        self.group.append(Player(name: "Meep"))
+        self.group.append(Player(name: "Mop"))
+        self.group.append(Player(name: "Moop"))
+    }
+    
+    init(players: [Player]) {
+        self.group = players
     }
     
     func getGroup() -> [Player] {

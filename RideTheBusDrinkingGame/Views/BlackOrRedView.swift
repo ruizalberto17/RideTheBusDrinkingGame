@@ -11,15 +11,20 @@ struct BlackOrRedView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
     @State var chosenCard: Card
+    @State var isNavigationBarHidden: Bool = true
     
     var body: some View {
-        ZStack {
-            if #available(iOS 14.0, *) {
-                Image("Background").ignoresSafeArea()
-            } else {
-                Image("Background")
-            }
-            VStack {
+        
+        NavigationView {
+            VStack(alignment: .center, spacing: 5) {
+                Spacer()
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: PlayerHandsView(),
+                                   label: {
+                                    Text("Show Hands").foregroundColor(.white).background(Color.blue)
+                                   }).padding(.trailing, 8)
+                }
                 Spacer()
                 Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Spacer()
@@ -54,8 +59,10 @@ struct BlackOrRedView: View {
                     }).background(Image("red_button"))
                     Spacer()
                 }
-                Spacer()
             }
+            .navigationBarHidden(true)
+            .frame(width: 400, height: 700, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Image("Background").edgesIgnoringSafeArea(.all))
         }
     }
     

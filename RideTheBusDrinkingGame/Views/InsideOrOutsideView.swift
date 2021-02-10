@@ -16,19 +16,22 @@ struct InsideOrOutsideView: View {
         let largerCard = viewRouter.getCurrentPlayer().getLargest()
         let smallerCard = viewRouter.getCurrentPlayer().getSmallest()
         
-        ZStack {
-            if #available(iOS 14.0, *) {
-                Image("Background").ignoresSafeArea()
-            } else {
-                Image("Background")
-            }
-            VStack {
-                Spacer()
-                Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Spacer()
-                Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
-                Spacer()
-                Text("Guess whether the card will be inside or outside your cards.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
+        NavigationView {
+            VStack(alignment: .center, spacing: 5) {
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: PlayerHandsView(),
+                                   label: {
+                                    Text("Show Hands").foregroundColor(.white).background(Color.blue)
+                                   }).padding(.trailing, 8)
+                }
+                Group {
+                    Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Spacer()
+                    Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
+                    Spacer()
+                    Text("Guess whether the card will be inside or outside your cards.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
+                }
                 Spacer()
                 HStack(alignment: .center){
                     Spacer()
@@ -37,6 +40,7 @@ struct InsideOrOutsideView: View {
                     Image(largerCard.getFrontImageName()).resizable().scaledToFit()
                     Spacer()
                 }
+                Spacer()
                 Spacer()
                 HStack(alignment: .center) {
                     Spacer()
@@ -66,6 +70,9 @@ struct InsideOrOutsideView: View {
                     Spacer()
                 }
             }
+            .navigationBarHidden(true)
+            .frame(width: 400, height: 700, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Image("Background").edgesIgnoringSafeArea(.all))
         }
     }
     

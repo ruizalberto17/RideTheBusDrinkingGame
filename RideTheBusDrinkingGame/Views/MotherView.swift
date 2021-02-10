@@ -31,6 +31,8 @@ struct MotherView: View {
             PickSuitView(chosenCard: Card()).transition(.scale)
         case .page9:
             PlayerHandsView().transition(.scale)
+        case .page10:
+            AddPlayersView().transition(.scale)
         }
     }
 }

@@ -13,13 +13,15 @@ struct GreaterOrLessView: View {
     @State var chosenCard: Card
     
     var body: some View {
-        ZStack {
-            if #available(iOS 14.0, *) {
-                Image("Background").ignoresSafeArea()
-            } else {
-                Image("Background")
-            }
-            VStack {
+        NavigationView {
+            VStack(alignment: .center, spacing: 5) {
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: PlayerHandsView(),
+                                   label: {
+                                    Text("Show Hands").foregroundColor(.white).background(Color.blue)
+                                   }).padding(.trailing, 8)
+                }
                 Spacer()
                 Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
@@ -28,53 +30,57 @@ struct GreaterOrLessView: View {
                 
                 Spacer()
                 Text("Guess whether the card will be less than, equal to, or greater than your card.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
-                
-                Spacer()
-                Image(viewRouter.getCurrentPlayer().playerCards[0].getFrontImageName()).resizable().scaledToFit()
-                Spacer()
-                
-                HStack(alignment: .center) {
+                Group {
                     Spacer()
-                    Button(action: { withAnimation{
-                        revealCard()
-                        if(chosenCard.getRank() >= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
-                            print("Take a drink!")
-                        } else {
-                            print("Give two drinks!")
-                        }
-                        checkIfEndOfRound()
-                    }}, label: {
-                        Text("Less than").foregroundColor(.white)
-                    }).background(Image("black_button"))
-                    
+                    Image(viewRouter.getCurrentPlayer().playerCards[0].getFrontImageName()).resizable().scaledToFit()
                     Spacer()
-                    Button(action: { withAnimation{
-                        revealCard()
-                        if(chosenCard.getRank() == viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
-                            print("Give two drinks!")
-                        } else {
-                            print("Take a drink!")
-                        }
-                        checkIfEndOfRound()
-                    }}, label: {
-                        Text("Equal to").foregroundColor(.white)
-                    }).background(Image("black_button"))
-                    
                     Spacer()
-                    Button(action: { withAnimation{
-                        revealCard()
-                        if(chosenCard.getRank() <= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
-                            print("Give two drinks!")
-                        } else {
-                            print("Take a drink!")
-                        }
-                        checkIfEndOfRound()
-                    }}, label: {
-                        Text("Greater than").foregroundColor(.white)
-                    }).background(Image("black_button"))
-                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button(action: { withAnimation{
+                            revealCard()
+                            if(chosenCard.getRank() >= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
+                                print("Take a drink!")
+                            } else {
+                                print("Give two drinks!")
+                            }
+                            checkIfEndOfRound()
+                        }}, label: {
+                            Text("Less than").foregroundColor(.white)
+                        }).background(Image("black_button"))
+                        
+                        Spacer()
+                        Button(action: { withAnimation{
+                            revealCard()
+                            if(chosenCard.getRank() == viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
+                                print("Give two drinks!")
+                            } else {
+                                print("Take a drink!")
+                            }
+                            checkIfEndOfRound()
+                        }}, label: {
+                            Text("Equal to").foregroundColor(.white)
+                        }).background(Image("black_button"))
+                        
+                        Spacer()
+                        Button(action: { withAnimation{
+                            revealCard()
+                            if(chosenCard.getRank() <= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
+                                print("Give two drinks!")
+                            } else {
+                                print("Take a drink!")
+                            }
+                            checkIfEndOfRound()
+                        }}, label: {
+                            Text("Greater than").foregroundColor(.white)
+                        }).background(Image("black_button"))
+                        Spacer()
+                    }
                 }
             }
+            .navigationBarHidden(true)
+            .frame(width: 400, height: 700, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Image("Background").edgesIgnoringSafeArea(.all))
         }
     }
     
