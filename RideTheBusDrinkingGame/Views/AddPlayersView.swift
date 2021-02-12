@@ -39,7 +39,7 @@ struct AddPlayersView: View {
                 }) {
                     VStack {
                         ForEach(Array(players.enumerated()), id: \.0) { i, _ in
-                            TextField("Player Name", text: self.$players[i]).foregroundColor(.black)
+                            TextField("Player Name", text: $players[i])
                         }
                     }
                 }
@@ -62,6 +62,14 @@ struct AddPlayersView: View {
     
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
+struct TextFieldView: View {
+    var i: Int
+    @State var players: [String]
+    var body: some View {
+        TextField("Player Name", text: self.$players[i])
     }
 }
 

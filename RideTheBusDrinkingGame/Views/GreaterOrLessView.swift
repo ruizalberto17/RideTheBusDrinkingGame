@@ -24,10 +24,8 @@ struct GreaterOrLessView: View {
                 }
                 Spacer()
                 Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                
                 Spacer()
                 Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
-                
                 Spacer()
                 Text("Guess whether the card will be less than, equal to, or greater than your card.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
                 Group {
@@ -41,10 +39,11 @@ struct GreaterOrLessView: View {
                             revealCard()
                             if(chosenCard.getRank() >= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
                                 print("Take a drink!")
+                                viewRouter.currentPage = .takeDrink
                             } else {
                                 print("Give two drinks!")
+                                viewRouter.currentPage = .giveDrink
                             }
-                            checkIfEndOfRound()
                         }}, label: {
                             Text("Less than").foregroundColor(.white)
                         }).background(Image("black_button"))
@@ -54,10 +53,11 @@ struct GreaterOrLessView: View {
                             revealCard()
                             if(chosenCard.getRank() == viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
                                 print("Give two drinks!")
+                                viewRouter.currentPage = .giveDrink
                             } else {
                                 print("Take a drink!")
+                                viewRouter.currentPage = .takeDrink
                             }
-                            checkIfEndOfRound()
                         }}, label: {
                             Text("Equal to").foregroundColor(.white)
                         }).background(Image("black_button"))
@@ -67,10 +67,11 @@ struct GreaterOrLessView: View {
                             revealCard()
                             if(chosenCard.getRank() <= viewRouter.getCurrentPlayer().playerCards[0].getRank()) {
                                 print("Give two drinks!")
+                                viewRouter.currentPage = .giveDrink
                             } else {
                                 print("Take a drink!")
+                                viewRouter.currentPage = .takeDrink
                             }
-                            checkIfEndOfRound()
                         }}, label: {
                             Text("Greater than").foregroundColor(.white)
                         }).background(Image("black_button"))
@@ -86,29 +87,9 @@ struct GreaterOrLessView: View {
     
     func revealCard() {
         chosenCard = viewRouter.deck.drawCard()
+        chosenCard.isFaceUp = true
+        viewRouter.chosenCard = chosenCard
         viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
-    }
-    
-    func checkIfEndOfRound() {
-        if viewRouter.currentPlayer < viewRouter.playerGroup.group.count-1 {
-            continueToNextPlayer()
-        } else {
-            continueToNextRound()
-        }
-    }
-    
-    func continueToNextPlayer() {
-        viewRouter.currentPlayer += 1
-        if viewRouter.currentPage == .page3 {
-            viewRouter.currentPage = .page4
-        } else {
-            viewRouter.currentPage = .page3
-        }
-    }
-    
-    func continueToNextRound() {
-        viewRouter.currentPlayer = 0
-        viewRouter.currentPage = .page5
     }
 }
 

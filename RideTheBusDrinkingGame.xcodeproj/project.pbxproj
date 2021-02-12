@@ -22,6 +22,9 @@
 		695C118B25D34E2500F45D70 /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C118A25D34E2500F45D70 /* DeckModel.swift */; };
 		695C119325D3604500F45D70 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C119225D3604500F45D70 /* PlayerModel.swift */; };
 		695C11A125D3A4DB00F45D70 /* AddPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11A025D3A4DB00F45D70 /* AddPlayersView.swift */; };
+		695C11A625D5DC6300F45D70 /* TakeADrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11A525D5DC6300F45D70 /* TakeADrinkView.swift */; };
+		695C11AB25D5E01C00F45D70 /* GiveDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11AA25D5E01C00F45D70 /* GiveDrinkView.swift */; };
+		695C11B025D60BAF00F45D70 /* BusRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11AF25D60BAF00F45D70 /* BusRideView.swift */; };
 		69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F6D25CDF98600228B01 /* AppDelegate.swift */; };
 		69BA6F7025CDF98600228B01 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F6F25CDF98600228B01 /* GameScene.sks */; };
 		69BA6F7225CDF98600228B01 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7125CDF98600228B01 /* Actions.sks */; };
@@ -69,6 +72,9 @@
 		695C118A25D34E2500F45D70 /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
 		695C119225D3604500F45D70 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		695C11A025D3A4DB00F45D70 /* AddPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayersView.swift; sourceTree = "<group>"; };
+		695C11A525D5DC6300F45D70 /* TakeADrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeADrinkView.swift; sourceTree = "<group>"; };
+		695C11AA25D5E01C00F45D70 /* GiveDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveDrinkView.swift; sourceTree = "<group>"; };
+		695C11AF25D60BAF00F45D70 /* BusRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRideView.swift; sourceTree = "<group>"; };
 		69BA6F6A25CDF98600228B01 /* RideTheBusDrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideTheBusDrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F6D25CDF98600228B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BA6F6F25CDF98600228B01 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				695C116E25D2B3BF00F45D70 /* PickSuitView.swift */,
 				695C117325D2BA2800F45D70 /* PlayerHandsView.swift */,
 				695C11A025D3A4DB00F45D70 /* AddPlayersView.swift */,
+				695C11A525D5DC6300F45D70 /* TakeADrinkView.swift */,
+				695C11AA25D5E01C00F45D70 /* GiveDrinkView.swift */,
+				695C11AF25D60BAF00F45D70 /* BusRideView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,8 +359,11 @@
 				695C117425D2BA2800F45D70 /* PlayerHandsView.swift in Sources */,
 				69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */,
 				695C115225D2839800F45D70 /* MotherView.swift in Sources */,
+				695C11AB25D5E01C00F45D70 /* GiveDrinkView.swift in Sources */,
 				695C116525D292B700F45D70 /* GreaterOrLessView.swift in Sources */,
+				695C11B025D60BAF00F45D70 /* BusRideView.swift in Sources */,
 				69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */,
+				695C11A625D5DC6300F45D70 /* TakeADrinkView.swift in Sources */,
 				695C116F25D2B3BF00F45D70 /* PickSuitView.swift in Sources */,
 				69BA701B25D0AD5F00228B01 /* PlayingCardDeck.swift in Sources */,
 				695C119325D3604500F45D70 /* PlayerModel.swift in Sources */,

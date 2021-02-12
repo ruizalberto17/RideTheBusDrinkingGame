@@ -18,18 +18,17 @@ struct PlayerHandsView: View {
             } else {
                 Image("Background")
             }
-            VStack{
-                Spacer()
+            VStack(alignment: .center){
                 ForEach(viewRouter.playerGroup.group, id: \.self) { player in
+                    Text(player.name).bold().font(.title)
                     HStack(alignment: .center) {
-                        Text(player.name).bold().font(.title)
                         ForEach(player.playerCards, id: \.self) { card in
                             Image(card.getFrontImageName()).resizable().scaledToFit()
                         }
                     }
                 }
                 Spacer()
-            }
+            }.frame(width: 400, height: 700, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }
     }
 }

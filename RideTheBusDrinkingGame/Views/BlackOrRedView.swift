@@ -30,7 +30,7 @@ struct BlackOrRedView: View {
                 Spacer()
                 Image(chosenCard.getFrontImageName()).resizable().scaledToFit()
                 Spacer()
-                Text("Guess where the card will be black or red.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
+                Text("Guess whether the card will be black or red.").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.bold).multilineTextAlignment(.center)
                 Spacer()
                 HStack(alignment: .center) {
                     Spacer()
@@ -38,10 +38,11 @@ struct BlackOrRedView: View {
                         revealCard()
                         if chosenCard.getColor().elementsEqual("Red") {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give a drink!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Black").foregroundColor(.white)
                     }).background(Image("black_button"))
@@ -50,10 +51,11 @@ struct BlackOrRedView: View {
                         revealCard()
                         if chosenCard.getColor().elementsEqual("Black") {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give a drink!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Red").foregroundColor(.white)
                     }).background(Image("red_button"))
@@ -68,29 +70,9 @@ struct BlackOrRedView: View {
     
     func revealCard() {
         chosenCard = viewRouter.deck.drawCard()
+        chosenCard.isFaceUp = true
+        viewRouter.chosenCard = chosenCard
         viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
-    }
-    
-    func checkIfEndOfRound() {
-        if viewRouter.currentPlayer < viewRouter.playerGroup.group.count-1 {
-            continueToNextPlayer()
-        } else {
-            continueToNextRound()
-        }
-    }
-    
-    func continueToNextPlayer() {
-        viewRouter.currentPlayer += 1
-        if viewRouter.currentPage == .page1 {
-            viewRouter.currentPage = .page2
-        } else {
-            viewRouter.currentPage = .page1
-        }
-    }
-    
-    func continueToNextRound() {
-        viewRouter.currentPlayer = 0
-        viewRouter.currentPage = .page3
     }
 }
 

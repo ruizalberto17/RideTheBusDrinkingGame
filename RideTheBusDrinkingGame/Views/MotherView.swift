@@ -33,6 +33,12 @@ struct MotherView: View {
             PlayerHandsView().transition(.scale)
         case .page10:
             AddPlayersView().transition(.scale)
+        case .giveDrink:
+            GiveDrinkView().transition(.scale)
+        case .takeDrink:
+            TakeADrinkView().transition(.scale)
+        case .busRide:
+            BusRideView().transition(.scale)
         }
     }
 }

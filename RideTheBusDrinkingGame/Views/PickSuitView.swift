@@ -35,10 +35,11 @@ struct PickSuitView: View {
                         revealCard()
                         if !chosenCard.getSuit().elementsEqual("Spade") {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give four drinks!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Spade").foregroundColor(.white)
                     }).background(Image("black_button"))
@@ -47,10 +48,11 @@ struct PickSuitView: View {
                         revealCard()
                         if !chosenCard.getSuit().elementsEqual("Diamond") {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give four drinks!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Diamond").foregroundColor(.white)
                     }).background(Image("red_button"))
@@ -59,10 +61,11 @@ struct PickSuitView: View {
                         revealCard()
                         if !chosenCard.getSuit().elementsEqual("Club") {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give four drinks!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Club").foregroundColor(.white)
                     }).background(Image("black_button"))
@@ -71,10 +74,11 @@ struct PickSuitView: View {
                         revealCard()
                         if !chosenCard.getSuit().elementsEqual("Heart") {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give four drinks!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Heart").foregroundColor(.white)
                     }).background(Image("red_button"))
@@ -90,29 +94,9 @@ struct PickSuitView: View {
     
     func revealCard() {
         chosenCard = viewRouter.deck.drawCard()
+        chosenCard.isFaceUp = true
+        viewRouter.chosenCard = chosenCard
         viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
-    }
-    
-    func checkIfEndOfRound() {
-        if viewRouter.currentPlayer < viewRouter.playerGroup.group.count-1 {
-            continueToNextPlayer()
-        } else {
-            continueToNextRound()
-        }
-    }
-    
-    func continueToNextPlayer() {
-        viewRouter.currentPlayer += 1
-        if viewRouter.currentPage == .page7 {
-            viewRouter.currentPage = .page8
-        } else {
-            viewRouter.currentPage = .page7
-        }
-    }
-    
-    func continueToNextRound() {
-        viewRouter.currentPlayer = 0
-        viewRouter.currentPage = .page9
     }
 }
 

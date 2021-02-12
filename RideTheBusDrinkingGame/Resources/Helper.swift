@@ -16,4 +16,7 @@ enum Page {
     case page8
     case page9
     case page10
+    case takeDrink
+    case giveDrink
+    case busRide
 }

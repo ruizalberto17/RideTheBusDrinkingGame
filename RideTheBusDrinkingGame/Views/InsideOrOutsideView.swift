@@ -48,10 +48,11 @@ struct InsideOrOutsideView: View {
                         revealCard()
                         if(chosenCard.getRank() >= largerCard.getRank() || chosenCard.getRank() <= smallerCard.getRank()) {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give three drink!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Inside").foregroundColor(.white)
                     }).background(Image("black_button"))
@@ -60,10 +61,11 @@ struct InsideOrOutsideView: View {
                         revealCard()
                         if(chosenCard.getRank() <= largerCard.getRank() && chosenCard.getRank() >= smallerCard.getRank()) {
                             print("Take a drink!")
+                            viewRouter.currentPage = .takeDrink
                         } else {
                             print("Give three drinks!")
+                            viewRouter.currentPage = .giveDrink
                         }
-                        checkIfEndOfRound()
                     }}, label: {
                         Text("Outside").foregroundColor(.white)
                     }).background(Image("black_button"))
@@ -78,29 +80,9 @@ struct InsideOrOutsideView: View {
     
     func revealCard() {
         chosenCard = viewRouter.deck.drawCard()
+        chosenCard.isFaceUp = true
+        viewRouter.chosenCard = chosenCard
         viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
-    }
-    
-    func checkIfEndOfRound() {
-        if viewRouter.currentPlayer < viewRouter.playerGroup.group.count-1 {
-            continueToNextPlayer()
-        } else {
-            continueToNextRound()
-        }
-    }
-    
-    func continueToNextPlayer() {
-        viewRouter.currentPlayer += 1
-        if viewRouter.currentPage == .page5 {
-            viewRouter.currentPage = .page6
-        } else {
-            viewRouter.currentPage = .page5
-        }
-    }
-    
-    func continueToNextRound() {
-        viewRouter.currentPlayer = 0
-        viewRouter.currentPage = .page7
     }
 }
 
