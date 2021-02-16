@@ -13,6 +13,7 @@ struct Card: Hashable, Codable {
     var suit: String
 //    var color: String
     var isFaceUp: Bool
+    var isGeneric: Bool
 //
 //    private var backImageName: String
 //    var backImage: Image {
@@ -27,12 +28,14 @@ struct Card: Hashable, Codable {
         self.rank = 0
         self.suit = ""
         self.isFaceUp = true
+        self.isGeneric = true
     }
     
     init(rank: Int, suit: String) {
         self.rank = rank
         self.suit = suit
         self.isFaceUp = false
+        self.isGeneric = false
     }
     
     static func validRanks () -> [Int] {

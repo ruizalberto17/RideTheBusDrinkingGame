@@ -13,25 +13,23 @@ struct MotherView: View {
     
     var body: some View {
         switch viewRouter.currentPage {
-        case .page1:
+        case .blackOrRed:
             BlackOrRedView(chosenCard: Card()).transition(.scale)
-        case .page2:
-            BlackOrRedView(chosenCard: Card()).transition(.scale)
-        case .page3:
+        case .greaterOrLess:
             GreaterOrLessView(chosenCard: Card()).transition(.scale)
-        case .page4:
-            GreaterOrLessView(chosenCard: Card()).transition(.scale)
-        case .page5:
+        case .insideOrOutside:
             InsideOrOutsideView(chosenCard: Card()).transition(.scale)
-        case .page6:
-            InsideOrOutsideView(chosenCard: Card()).transition(.scale)
-        case .page7:
+        case .pickSuit:
             PickSuitView(chosenCard: Card()).transition(.scale)
-        case .page8:
-            PickSuitView(chosenCard: Card()).transition(.scale)
-        case .page9:
+        case .cardSwap:
+            CardSwapView().transition(.scale)
+        case .cardSwapTakeDrink:
+            TakeADrinkCardSwapView().transition(.scale)
+        case .cardSwapGiveDrink:
+            GiveDrinkCardSwapView().transition(.scale)
+        case .playerHands:
             PlayerHandsView().transition(.scale)
-        case .page10:
+        case .addPlayers:
             AddPlayersView().transition(.scale)
         case .giveDrink:
             GiveDrinkView().transition(.scale)

@@ -21,6 +21,10 @@ class Playerss {
         playerCards.append(cardToAdd)
     }
     
+    func removeCard(cardToRemove: Card) {
+        
+    }
+    
     func getPlayerCards() -> [Card] {
         return self.playerCards
     }

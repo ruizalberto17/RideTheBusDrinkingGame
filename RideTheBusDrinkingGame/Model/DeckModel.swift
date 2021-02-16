@@ -19,6 +19,7 @@ struct Deck: Hashable, Codable {
                 deck.append(currentCard)
             }
         }
+        deck.shuffle()
         return Deck(cards: deck)
     }
     
@@ -49,6 +50,7 @@ struct Deck: Hashable, Codable {
             print("You drew: ")
             print(cardDrawn.toString())
             print(self.cardsRemaining)
+            self.shuffleDeck()
             return cardDrawn
         }
     }

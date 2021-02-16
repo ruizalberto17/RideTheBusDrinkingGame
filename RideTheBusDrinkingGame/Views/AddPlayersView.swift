@@ -51,7 +51,7 @@ struct AddPlayersView: View {
                     people.append(Player(name: player))
                 }
                 viewRouter.playerGroup = PlayerGroup(players: people)
-                viewRouter.currentPage = .page1
+                viewRouter.currentPage = .blackOrRed
             }, label: {
                 Text("Start Game")
             })

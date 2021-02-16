@@ -12,6 +12,7 @@ struct TakeADrinkView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 15){
             Spacer()
+            Text(viewRouter.getCurrentPlayer().name).font(.largeTitle).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             Text("Take a drink!").bold().font(.largeTitle)
             Image(viewRouter.chosenCard.getFrontImageName()).resizable().scaledToFit()
             Spacer()
@@ -38,33 +39,43 @@ struct TakeADrinkView: View {
     
     func continueToNextPlayer() {
         viewRouter.currentPlayer += 1
-        if viewRouter.currentRound == .page1 {
-            viewRouter.currentPage = .page1
-        } else if viewRouter.currentRound == .page3 {
-            viewRouter.currentPage = .page3
-        } else if viewRouter.currentRound == .page5 {
-            viewRouter.currentPage = .page5
-        } else {
-            viewRouter.currentPage = .page7
-        }
+        viewRouter.currentPage = viewRouter.currentRound
     }
     
     func continueToNextRound() {
         viewRouter.currentPlayer = 0
-        if viewRouter.currentRound == .page1 {
-            viewRouter.currentRound = .page3
-            viewRouter.currentPage = .page3
-        } else if viewRouter.currentRound == .page3 {
-            viewRouter.currentRound = .page5
-            viewRouter.currentPage = .page5
-        } else if viewRouter.currentRound == .page5 {
-            viewRouter.currentRound = .page7
-            viewRouter.currentPage = .page7
-        } else {
-            viewRouter.currentRound = .page9
-            viewRouter.currentPage = .page9
+        switch viewRouter.currentRound {
+        case .blackOrRed:
+            viewRouter.currentRound = .greaterOrLess
+            viewRouter.currentPage = .greaterOrLess
+        case .greaterOrLess:
+            viewRouter.currentRound = .insideOrOutside
+            viewRouter.currentPage = .insideOrOutside
+        case .insideOrOutside:
+            viewRouter.currentRound = .pickSuit
+            viewRouter.currentPage = .pickSuit
+        case .pickSuit:
+            viewRouter.currentRound = .cardSwap
+            viewRouter.currentPage = .cardSwap
+        case .cardSwap:
+            viewRouter.currentRound = .busRide
+            viewRouter.currentPage = .busRide
+        case .cardSwapTakeDrink:
+            print("")
+        case .cardSwapGiveDrink:
+            print("")
+        case .playerHands:
+            print("")
+        case .addPlayers:
+            print("")
+        case .takeDrink:
+            print("Take a drink!")
+        case .giveDrink:
+            print("Give a drink!")
+        case .busRide:
+            viewRouter.currentRound = .blackOrRed
+            viewRouter.currentPage = .addPlayers
         }
-        
     }
 }
 

@@ -25,6 +25,9 @@
 		695C11A625D5DC6300F45D70 /* TakeADrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11A525D5DC6300F45D70 /* TakeADrinkView.swift */; };
 		695C11AB25D5E01C00F45D70 /* GiveDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11AA25D5E01C00F45D70 /* GiveDrinkView.swift */; };
 		695C11B025D60BAF00F45D70 /* BusRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11AF25D60BAF00F45D70 /* BusRideView.swift */; };
+		695C11B525D881F100F45D70 /* CardSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11B425D881F100F45D70 /* CardSwapView.swift */; };
+		695C11BA25D8B13400F45D70 /* TakeADrinkCardSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11B925D8B13400F45D70 /* TakeADrinkCardSwapView.swift */; };
+		695C11BF25D8BF5300F45D70 /* GiveDrinkCardSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C11BE25D8BF5300F45D70 /* GiveDrinkCardSwapView.swift */; };
 		69BA6F6E25CDF98600228B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BA6F6D25CDF98600228B01 /* AppDelegate.swift */; };
 		69BA6F7025CDF98600228B01 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F6F25CDF98600228B01 /* GameScene.sks */; };
 		69BA6F7225CDF98600228B01 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69BA6F7125CDF98600228B01 /* Actions.sks */; };
@@ -75,6 +78,9 @@
 		695C11A525D5DC6300F45D70 /* TakeADrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeADrinkView.swift; sourceTree = "<group>"; };
 		695C11AA25D5E01C00F45D70 /* GiveDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveDrinkView.swift; sourceTree = "<group>"; };
 		695C11AF25D60BAF00F45D70 /* BusRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRideView.swift; sourceTree = "<group>"; };
+		695C11B425D881F100F45D70 /* CardSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwapView.swift; sourceTree = "<group>"; };
+		695C11B925D8B13400F45D70 /* TakeADrinkCardSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeADrinkCardSwapView.swift; sourceTree = "<group>"; };
+		695C11BE25D8BF5300F45D70 /* GiveDrinkCardSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveDrinkCardSwapView.swift; sourceTree = "<group>"; };
 		69BA6F6A25CDF98600228B01 /* RideTheBusDrinkingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideTheBusDrinkingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BA6F6D25CDF98600228B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BA6F6F25CDF98600228B01 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -134,6 +140,9 @@
 				695C11A525D5DC6300F45D70 /* TakeADrinkView.swift */,
 				695C11AA25D5E01C00F45D70 /* GiveDrinkView.swift */,
 				695C11AF25D60BAF00F45D70 /* BusRideView.swift */,
+				695C11B425D881F100F45D70 /* CardSwapView.swift */,
+				695C11B925D8B13400F45D70 /* TakeADrinkCardSwapView.swift */,
+				695C11BE25D8BF5300F45D70 /* GiveDrinkCardSwapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,10 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BA6F7425CDF98600228B01 /* GameScene.swift in Sources */,
+				695C11BF25D8BF5300F45D70 /* GiveDrinkCardSwapView.swift in Sources */,
+				695C11BA25D8B13400F45D70 /* TakeADrinkCardSwapView.swift in Sources */,
 				695C117E25D3428400F45D70 /* CardModel.swift in Sources */,
 				695C114D25D2836A00F45D70 /* ViewRouter.swift in Sources */,
 				695C11A125D3A4DB00F45D70 /* AddPlayersView.swift in Sources */,
 				695C118625D3449100F45D70 /* CardData.swift in Sources */,
+				695C11B525D881F100F45D70 /* CardSwapView.swift in Sources */,
 				695C117425D2BA2800F45D70 /* PlayerHandsView.swift in Sources */,
 				69BA701125D0A90100228B01 /* PlayingCard.swift in Sources */,
 				695C115225D2839800F45D70 /* MotherView.swift in Sources */,

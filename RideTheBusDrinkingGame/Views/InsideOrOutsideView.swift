@@ -83,6 +83,7 @@ struct InsideOrOutsideView: View {
         chosenCard.isFaceUp = true
         viewRouter.chosenCard = chosenCard
         viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
+        viewRouter.ranksInPlayerHands.append(chosenCard.getRank())
     }
 }
 

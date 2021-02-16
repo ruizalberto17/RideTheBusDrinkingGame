@@ -9,10 +9,14 @@ import SwiftUI
 
 class ViewRouter: ObservableObject {
     
-    @Published var currentPage: Page = .page10
-    @Published var currentRound: Page = .page1
+    @Published var currentPage: Page = .addPlayers
+    @Published var currentRound: Page = .blackOrRed
     @Published var playerGroup: PlayerGroup = PlayerGroup()
     @Published var deck: Deck = Deck.createDeck()
+    @Published var currentCardSwapCards: [Card] = [Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card()]
+    @Published var currentCardSwapPhase: Int = 0
+    @Published var drinkGroup: [Player] = []
+    @Published var ranksInPlayerHands: [Int] = []
     @Published var currentPlayer: Int = 0
     @Published var chosenCard: Card = Card()
     @Published var busDeck: Deck = Deck.createDeck()

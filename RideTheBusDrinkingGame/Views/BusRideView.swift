@@ -206,7 +206,7 @@ struct BusRideView: View {
             }
             
             if neededToFill > cardsLeft {
-                viewRouter.currentPage = .page10
+                viewRouter.currentPage = .addPlayers
             }
         }
     }

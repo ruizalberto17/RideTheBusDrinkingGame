@@ -39,4 +39,13 @@ struct Player: Hashable, Codable {
             return self.playerCards[1]
         }
     }
+    
+    func containsRank(rank: Int) -> Bool {
+        for card in self.playerCards {
+            if card.getRank() == rank {
+                return true
+            }
+        }
+        return false
+    }
 }
