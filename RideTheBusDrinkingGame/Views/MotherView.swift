@@ -27,6 +27,8 @@ struct MotherView: View {
             TakeADrinkCardSwapView().transition(.scale)
         case .cardSwapGiveDrink:
             GiveDrinkCardSwapView().transition(.scale)
+        case .cardSwapGiveDrink2:
+            GiveDrinkCardSwapView().transition(.scale)
         case .playerHands:
             PlayerHandsView().transition(.scale)
         case .addPlayers:

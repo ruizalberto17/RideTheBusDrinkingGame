@@ -13,6 +13,7 @@ enum Page {
     case cardSwap
     case cardSwapTakeDrink
     case cardSwapGiveDrink
+    case cardSwapGiveDrink2
     case playerHands
     case addPlayers
     case takeDrink

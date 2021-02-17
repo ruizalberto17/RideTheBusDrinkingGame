@@ -56,8 +56,11 @@ struct CardSwapView: View {
                     if viewRouter.currentCardSwapPhase == 1 {
                         viewRouter.currentCardSwapCards[4].isFaceUp = true
                         viewRouter.currentCardSwapPhase += 1
+                        viewRouter.chosenCard = viewRouter.currentCardSwapCards[4]
                         //viewRouter.currentPage = .giveDrink
                         playersToGiveCard()
+                        viewRouter.chosenCard = viewRouter.cardsToGive.popLast()
+                        viewRouter.currentPage = .cardSwapGiveDrink
                     }
                 }
                 Image(viewRouter.currentCardSwapCards[5].getFrontImageName()).resizable().scaledToFit().onTapGesture {
@@ -119,13 +122,12 @@ struct CardSwapView: View {
         }
     }
     
-    func playersToGiveCard() {
-        for player in viewRouter.playerGroup.group {
-            if player.containsRank(rank: viewRouter.chosenCard.getRank()) {
-                viewRouter.currentPage = .cardSwapGiveDrink
-            }
+    func cardsToGiveCard() {
+        for card in viewRouter.drawCards {
+            viewRouter.cardsToGiveCard.append(card)
         }
     }
+
 }
 
 struct CardSwapView_Previews: PreviewProvider {

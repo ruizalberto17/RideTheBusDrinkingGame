@@ -11,24 +11,18 @@ import SwiftUI
 struct Card: Hashable, Codable {
     var rank: Int
     var suit: String
-//    var color: String
     var isFaceUp: Bool
     var isGeneric: Bool
-//
-//    private var backImageName: String
-//    var backImage: Image {
-//        Image(backImageName)
-//    }
-//    private var frontImageName: String
-//    var frontImage: Image {
-//        Image(frontImageName)
-//    }
+    var id: String
+    var currentHolder: String
     
     init() {
         self.rank = 0
         self.suit = ""
         self.isFaceUp = true
         self.isGeneric = true
+        self.id = ""
+        self.currentHolder = ""
     }
     
     init(rank: Int, suit: String) {
@@ -36,6 +30,8 @@ struct Card: Hashable, Codable {
         self.suit = suit
         self.isFaceUp = false
         self.isGeneric = false
+        self.id = String(rank) + suit
+        self.currentHolder = ""
     }
     
     static func validRanks () -> [Int] {

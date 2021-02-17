@@ -46,6 +46,8 @@ struct Deck: Hashable, Codable {
             return Card()
         } else {
             let cardDrawn: Card = cards.popLast()!
+            viewRouter.drawnCards.append(cardDrawn)
+            cardDrawn.currentHolder = viewRouter.getCurrentPlayer().name
             self.cardsRemaining = self.cards.count
             print("You drew: ")
             print(cardDrawn.toString())

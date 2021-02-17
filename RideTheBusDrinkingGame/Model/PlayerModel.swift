@@ -19,6 +19,16 @@ struct Player: Hashable, Codable {
     mutating func addCard(cardToAdd: Card) {
         self.playerCards.append(cardToAdd)
     }
+
+    mutating func removeCard(idOfCardToRemove: String) {
+        var newPlayerHand: [Card] = []
+        for card in self.playerCards {
+            if !card.id.elementsEqual(idOfCardToRemove) {
+                newPlayerHand.append(card)
+            }
+        }
+        self.playerCards = newPlayerHand
+    }
     
     func getPlayerCards() -> [Card] {
         return self.playerCards
