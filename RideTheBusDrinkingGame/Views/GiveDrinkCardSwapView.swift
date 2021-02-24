@@ -18,13 +18,22 @@ struct GiveDrinkCardSwapView: View {
             Spacer()
             ForEach(viewRouter.playerGroup.group, id: \.self) { player in
                 Button(action: {
-                    for cardOwner in viewRouter.playerGroup.group {
-                        if(cardOwner.name.elementsEqual(viewRouter.chosenCard.currentHolder)) {
-                            cardOwner.removeCard(viewRouter.chosenCard.id)
+                    for index in 0...viewRouter.playerGroup.group.count-1 {
+                        if viewRouter.playerGroup.group[index].name.elementsEqual(viewRouter.chosenCard.currentHolder) {
+                            viewRouter.playerGroup.group[index].removeCard(idOfCardToRemove: viewRouter.chosenCard.id)
+                            print("did remove to original owner")
                         }
                     }
-                    player.addCard(viewRouter.chosenCard)
-                    viewRouter.chosenCard.currentHolder = player.name
+                    for index in 0...viewRouter.playerGroup.group.count-1 {
+                        if viewRouter.playerGroup.group[index].name.elementsEqual(player.name) {
+                            viewRouter.chosenCard.currentHolder = viewRouter.playerGroup.group[index].name
+                            viewRouter.playerGroup.group[index].addCard(cardToAdd: viewRouter.chosenCard)
+                            print("did add to new owner")
+                        }
+                    }
+                    //viewRouter.chosenCard.currentHolder = player.name
+                    print(viewRouter.chosenCard.toString())
+                    viewRouter.playerGroup.printPlayerHands()
                     isThereMoreToGive()            
                 }, label: {
                     Text(player.name).background(Image("black_button"))
@@ -38,14 +47,16 @@ struct GiveDrinkCardSwapView: View {
 
     func isThereMoreToGive() {
         if !viewRouter.cardsToGive.isEmpty {
-            viewRouter.chosenCard = viewRouter.cardsToGive.popLast()
-            if viewRouter.currentPage == .GiveDrinkCardSwapView {
-                viewRouter.currentPage = .GiveDrinkCardSwapView2
+            viewRouter.chosenCard = viewRouter.cardsToGive.popLast()!
+            if viewRouter.currentPage == .cardSwapGiveDrink {
+                viewRouter.currentPage = .cardSwapGiveDrink2
             } else {
-                viewRouter.currentPage = .GiveDrinkCardSwapView
+                viewRouter.currentPage = .cardSwapGiveDrink
             }
+        } else if viewRouter.currentRound == .busRide {
+            viewRouter.currentPage = .busRide
         } else {
-            viewRouter.currentPage = .CardSwapView
+            viewRouter.currentPage = .cardSwap
         }
     }
 }

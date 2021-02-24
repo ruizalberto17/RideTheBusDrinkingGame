@@ -21,7 +21,7 @@ class ViewRouter: ObservableObject {
     @Published var currentPlayer: Int = 0
     @Published var chosenCard: Card = Card()
     @Published var cardToGive: Card = Card()
-    @published var cardsToGive: [Card] = []
+    @Published var cardsToGive: [Card] = []
     @Published var busDeck: Deck = Deck.createDeck()
     @Published var currentBusCards: [Card] = [Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card(), Card()]
     

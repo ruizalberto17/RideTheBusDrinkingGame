@@ -24,4 +24,13 @@ struct PlayerGroup: Hashable, Codable {
     func getGroup() -> [Player] {
         return self.group
     }
+    
+    func printPlayerHands() {
+        for player in group {
+            print("PLAYERS CARDS BEGIN: \(player.name)")
+            for card in player.playerCards {
+                print(card.toString())
+            }
+        }
+    }
 }

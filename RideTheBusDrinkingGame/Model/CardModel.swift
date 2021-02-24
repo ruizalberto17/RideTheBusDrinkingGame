@@ -47,7 +47,7 @@ struct Card: Hashable, Codable {
     }
     
     func toString() -> String {
-        let description = "This PlayingCard has a face value of \(self.rank), a color of \(getColor()),and is of the \(suit) suit"
+        let description = "This PlayingCard has a face value of \(self.rank), a color of \(getColor()),and is of the \(suit) suit. Card holder is \(currentHolder)"
         return description
     }
     

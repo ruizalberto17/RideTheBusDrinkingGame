@@ -64,6 +64,8 @@ struct TakeADrinkView: View {
             print("")
         case .cardSwapGiveDrink:
             print("")
+        case .cardSwapGiveDrink2:
+            print("")
         case .playerHands:
             print("")
         case .addPlayers:

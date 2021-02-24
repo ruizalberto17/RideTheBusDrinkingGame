@@ -81,7 +81,9 @@ struct InsideOrOutsideView: View {
     func revealCard() {
         chosenCard = viewRouter.deck.drawCard()
         chosenCard.isFaceUp = true
+        chosenCard.currentHolder = viewRouter.getCurrentPlayer().name
         viewRouter.chosenCard = chosenCard
+        viewRouter.drawnCards.append(chosenCard)
         viewRouter.addCardToCurrentPlayer(cardToAdd: chosenCard)
         viewRouter.ranksInPlayerHands.append(chosenCard.getRank())
     }
